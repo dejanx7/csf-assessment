@@ -16,7 +16,7 @@ export class NewsService {
     
 
     console.log("news in service" , news)
-    return this.http.post('http://localhost:8080/postnews', news)
+    return this.http.post('/postnews', news)
   }
 
   uploadFile(file: ElementRef): Observable<any> {
@@ -25,6 +25,6 @@ export class NewsService {
 
     formData.set("file", file.nativeElement.files[0])
 
-    return this.http.post("http://localhost:8080/upload", formData)
+    return this.http.post('/upload', formData)
   }
 }
