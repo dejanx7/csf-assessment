@@ -1,5 +1,6 @@
 package vttp2023.batch3.csf.assessment.cnserver.services;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
@@ -60,7 +61,29 @@ public class NewsService {
 	// Do not change the method name and the return type
 	// You may add any number of parameters
 	// Returns a list of tags and their associated count
-	public List<TagCount> getTags(/* Any number of parameters */) {
+	public List<TagCount> getTags() {
+		List<Document> docList = new ArrayList<>();
+		List<TagCount> tagList = new LinkedList<TagCount>();
+		docList = repo.getAllTags();
+
+		for (Document document : docList) {
+			
+			String tag = document.getString("tags");
+			Integer tagCountt = 1;
+
+			if(tagList.contains(tag)){
+
+				
+				Integer index = tagList.indexOf(tag);
+				tagList.add(index, new TagCount(tag, tagCountt++));
+			} else{
+
+				tagList.add(new TagCount(tag, tagCountt));
+			}
+			
+
+		}
+		
 		return new LinkedList<>();
 	}
 

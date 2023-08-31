@@ -70,6 +70,10 @@ export class View2ShareNewsFormComponent implements OnInit{
     this.service.uploadFile(this.toUpload).subscribe(
       (result) => {console.log(result)}
     )
+
+    this.msg = 'successfully added'
+
+    
   }
 }
 
