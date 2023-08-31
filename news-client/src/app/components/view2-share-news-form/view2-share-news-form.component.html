@@ -1,0 +1,36 @@
+<h2>Share a News</h2>
+<form [formGroup]="shareNewsForm" (ngSubmit)="submitForm()">
+    <table>
+        <tr>
+            <td>Title:</td>
+            <td><input type="text" formControlName="title"></td>
+        </tr>
+        <tr>
+            <td>Photo:</td>
+            <td><input type="file" formControlName="photo" #toUpload></td>
+            
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td><textarea cols="30" rows="10" formControlName="description"></textarea></td>
+        </tr>
+        <tr>
+            <td>Tags:</td>
+            <input type="text" formControlName="tags">
+            <td>
+                <Button type="button" (click)="addTag()">+</Button>
+            </td>
+        </tr>
+        <tr *ngFor="let tag of tagList">
+            <!-- display tags -->
+            <td >
+                <button (click)="removeTag()">{{tag}}</button> 
+            </td>
+        </tr>
+        <tr>
+            <td><button routerLink="/">Back</button></td>
+            <td><Button type="submit">Post News</Button></td>
+        </tr>
+    </table>
+
+</form>
