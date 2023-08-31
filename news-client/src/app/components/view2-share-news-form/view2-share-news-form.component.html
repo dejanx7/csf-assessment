@@ -29,7 +29,7 @@
         </tr>
         <tr>
             <td><button routerLink="/">Back</button></td>
-            <td><Button type="submit">Post News</Button></td>
+            <td><Button type="submit" [disabled]="shareNewsForm.invalid">Post News</Button></td>
         </tr>
     </table>
 

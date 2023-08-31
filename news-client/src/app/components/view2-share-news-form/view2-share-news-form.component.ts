@@ -45,8 +45,7 @@ export class View2ShareNewsFormComponent implements OnInit{
   }
 
   removeTag(){
-    // remove tag item cbl
-    let tagIndex = this.tagList 
+    // remove tag item cbl 
     this.tagList.splice(0, 1)
   }
 
